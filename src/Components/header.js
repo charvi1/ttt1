@@ -1,31 +1,33 @@
-// src/Header.js
+// src/components/Header.js
 import React from 'react';
-import {Link}from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import '../App.css'; // Assuming the CSS is moved to Header.css
 
-const Header = () => (
-  <header>
-    <div className="logo">
-      <img src="logo.png" alt="Logo" />
-    </div>
-    <hr />
-    <nav>
-      <ul>
-      <li><Link to="/">HOME</Link></li>
-        <li><Link to="/about">WHO WE ARE</Link></li>
-        <input placeholder="What are you looking for?" />
-        <li><Link to="/track">TRACK</Link></li>
-        <li><Link to="/login">LOGIN</Link></li>
-        <li><Link to="/cart">CART</Link></li>
-      </ul>
-    </nav>
-    <div className="bg">
-      <div className="text-heading">
-        <h2>Quality care for</h2>
-        <h1>your furry friends</h1>
+const Header = () => {
+  return (
+    <header className="about-header">
+      <div className="logo">
+        <img src="logo2.png" alt="Logo" />
       </div>
-      <img src="image.png" alt="Background" />
-    </div>
-  </header>
-);
+      <hr />
+      <nav>
+        <ul>
+          <li><Link to="/">HOME</Link></li>
+          <li><Link to="/about">WHO WE ARE</Link></li>
+          <div className="search-bar">
+            <input placeholder="What are you looking for?" className="search-input" />
+            <div className="search-icon"><i className="fa-solid fa-magnifying-glass"></i></div>
+          </div>
+          <li><Link to="/track"><i className="fa-solid fa-location-dot"></i>TRACK</Link></li>
+          <li><Link to="/login"><i className="fa-solid fa-user"></i>LOGIN</Link></li>
+          <li><Link to="/cart"><i className="fa-solid fa-cart-shopping"></i>CART</Link></li>
+        </ul>
+      </nav>
+      
+        
+        
+    </header>
+  );
+};
 
 export default Header;

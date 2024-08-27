@@ -1,28 +1,31 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Header from './Components/header';
 import Home from './Pages/home';
-import About from './Pages/about';
-import Track from './Pages/track';
-import Login from './Pages/login';
-import Cart from './Pages/cart';
+import About from './Pages/about'; // Assume you have an About component
+import Login from './Pages/login'; // Your Login component
+//import Cart from './Pages/cart'; // Your Cart component
+//import Track from './Pages/Track'; // Your Track component
+import Header from './Components/header';
+import Footer from './Components/footer';
+import './App.css'; // Global styles
 
-const App = () => (
-  <Router>
-    <div>
+function App() {
+  return (
+    <Router>
       <Header />
       <main>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/track" element={<Track />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/cart" element={<Cart />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
+          {/* <Route path="/track" element={<Track />} /> */}
         </Routes>
       </main>
-    </div>
-  </Router>
-);
+      <Footer />
+    </Router>
+  );
+}
 
 export default App;
